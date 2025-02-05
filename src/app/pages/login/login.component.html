@@ -1,4 +1,4 @@
-<div class="container-fluid card login-container">
+<div class="container-fluid card auth-container">
   <h3 class="text-center">Login</h3>
   <hr />
   <div *ngIf="errorMsg.length" class="alert alert-danger" role="alert">
@@ -15,7 +15,7 @@
     />
   </div>
   <div class="mb-3">
-    <label for="password" class="form-label">password</label>
+    <label for="password" class="form-label">Password</label>
     <input
       [(ngModel)]="authRequest.password"
       type="password"
