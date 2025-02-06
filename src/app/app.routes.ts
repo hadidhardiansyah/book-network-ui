@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ActivateAccountComponent } from './pages/activate-account/activate-account.component';
+import { bookRoutes } from './modules/book/book.routes';
 
 export const routes: Routes = [
   {
@@ -16,4 +17,5 @@ export const routes: Routes = [
     path: 'activate-account',
     component: ActivateAccountComponent,
   },
+  ...bookRoutes,
 ];
