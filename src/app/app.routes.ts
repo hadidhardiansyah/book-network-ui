@@ -17,5 +17,8 @@ export const routes: Routes = [
     path: 'activate-account',
     component: ActivateAccountComponent,
   },
-  ...bookRoutes,
+  {
+    path: 'books',
+    children: bookRoutes,
+  },
 ];
