@@ -3,11 +3,18 @@ import { PageResponseBookResponse } from '@/app/services/models';
 import { BookService } from '@/app/services/services';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BookCardComponent } from '../../components/book-card/book-card.component';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    // Components Standalone
+    BookCardComponent,
+
+    // Angular Module
+    CommonModule,
+  ],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss',
 })
