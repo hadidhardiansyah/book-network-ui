@@ -14,6 +14,13 @@ export const bookRoutes: Routes = [
             (m) => m.BookListComponent
           ),
       },
+      {
+        path: 'my-books',
+        loadComponent: () =>
+          import('./pages/my-books/my-books.component').then(
+            (m) => m.MyBooksComponent
+          ),
+      },
     ],
   },
 ];

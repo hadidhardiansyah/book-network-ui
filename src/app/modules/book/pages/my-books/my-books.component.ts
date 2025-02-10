@@ -1,12 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { BookResponse, PageResponseBookResponse } from '@/app/services/models';
 import { BookService } from '@/app/services/services';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookCardComponent } from '../../components/book-card/book-card.component';
 
 @Component({
-  selector: 'app-book-list',
+  selector: 'app-my-books',
   standalone: true,
   imports: [
     // Components Standalone
@@ -15,16 +15,13 @@ import { BookCardComponent } from '../../components/book-card/book-card.componen
     // Angular Module
     CommonModule,
   ],
-  templateUrl: './book-list.component.html',
-  styleUrl: './book-list.component.scss',
+  templateUrl: './my-books.component.html',
+  styleUrl: './my-books.component.scss',
 })
-export class BookListComponent implements OnInit {
+export class MyBooksComponent implements OnInit {
   bookResponse: PageResponseBookResponse = {};
   page: number = 0;
   size: number = 5;
-
-  message: string = '';
-  level: string = 'success';
 
   constructor(private bookService: BookService, private router: Router) {}
 
@@ -34,7 +31,7 @@ export class BookListComponent implements OnInit {
 
   private findAllBooks() {
     this.bookService
-      .findAllBooks({
+      .findAllBooksByOwner({
         page: this.page,
         size: this.size,
       })
@@ -81,21 +78,9 @@ export class BookListComponent implements OnInit {
     }
   }
 
-  borrowBook(book: BookResponse) {
-    this.message = '';
-    this.bookService
-      .borrowBook({
-        'book-id': book.id as number,
-      })
-      .subscribe({
-        next: () => {
-          this.level = 'success';
-          this.message = 'Book successfully added to your list';
-        },
-        error: (err) => {
-          this.level = 'error';
-          this.message = err.error.error;
-        },
-      });
-  }
+  archiveBook(book: BookResponse) {}
+
+  shareBook(book: BookResponse) {}
+
+  editBook(book: BookResponse) {}
 }

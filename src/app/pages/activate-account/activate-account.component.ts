@@ -32,11 +32,8 @@ export class ActivateAccountComponent {
             'Your account has been successfully activated.\nNow you can proceed to login';
           this.submitted = true;
           this.isOkay = true;
-          console.log('hadid');
         },
         error: (err) => {
-          console.log('gembil');
-
           this.message = 'Token has been expired or invalid';
           this.submitted = true;
           this.isOkay = false;
