@@ -21,6 +21,20 @@ export const bookRoutes: Routes = [
             (m) => m.MyBooksComponent
           ),
       },
+      {
+        path: 'manage',
+        loadComponent: () =>
+          import('./pages/manage-book/manage-book.component').then(
+            (m) => m.ManageBookComponent
+          ),
+      },
+      {
+        path: 'manage/:bookId',
+        loadComponent: () =>
+          import('./pages/manage-book/manage-book.component').then(
+            (m) => m.ManageBookComponent
+          ),
+      },
     ],
   },
 ];

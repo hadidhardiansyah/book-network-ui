@@ -2,7 +2,7 @@ import { BookResponse, PageResponseBookResponse } from '@/app/services/models';
 import { BookService } from '@/app/services/services';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { BookCardComponent } from '../../components/book-card/book-card.component';
 
 @Component({
@@ -14,6 +14,7 @@ import { BookCardComponent } from '../../components/book-card/book-card.componen
 
     // Angular Module
     CommonModule,
+    RouterModule,
   ],
   templateUrl: './my-books.component.html',
   styleUrl: './my-books.component.scss',
