@@ -1,11 +1,13 @@
 import { Routes } from '@angular/router';
 import { MainComponent } from './pages/main/main.component';
+import { authGuard } from '@/app/services/guard/auth.guard';
 
 export const bookRoutes: Routes = [
   {
     path: '',
     loadComponent: () =>
       import('./pages/main/main.component').then((m) => m.MainComponent),
+    canActivate: [authGuard],
     children: [
       {
         path: '',
