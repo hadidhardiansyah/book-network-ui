@@ -22,6 +22,13 @@ export const bookRoutes: Routes = [
           ),
       },
       {
+        path: 'my-borrowed-books',
+        loadComponent: () =>
+          import(
+            './pages/borrowed-book-list/borrowed-book-list.component'
+          ).then((m) => m.BorrowedBookListComponent),
+      },
+      {
         path: 'manage',
         loadComponent: () =>
           import('./pages/manage-book/manage-book.component').then(
